@@ -1,0 +1,44 @@
+use std::{
+    fs,
+    ops::{Add, Sub},
+};
+
+pub fn print_green(message: &str) {
+    println!("\x1b[32m{}\x1b[0m", message);
+}
+
+pub fn read_input() -> String {
+    let path = "./input.txt";
+    fs::read_to_string(path).unwrap_or_else(|_| panic!("Error reading input file: {}", path))
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+pub struct Point {
+    pub x: i64,
+    pub y: i64,
+}
+impl Point {
+    pub fn new(x: i64, y: i64) -> Self {
+        Self { x, y }
+    }
+}
+impl Sub for Point {
+    type Output = Point;
+
+    fn sub(self, other: Point) -> Point {
+        Point {
+            x: self.x - other.x,
+            y: self.y - other.y,
+        }
+    }
+}
+impl Add for Point {
+    type Output = Point;
+
+    fn add(self, other: Point) -> Point {
+        Point {
+            x: self.x + other.x,
+            y: self.y + other.y,
+        }
+    }
+}
