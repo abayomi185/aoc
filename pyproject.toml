@@ -1,0 +1,14 @@
+[project]
+name = "aoc"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["pytest>8"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["common", "aoc2024"]
+exclude = []
+
+[tool.pytest.ini_options]
+python_files = ["*.py"]
