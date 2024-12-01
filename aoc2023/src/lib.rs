@@ -1,14 +1,14 @@
 mod util; // Utility functions
 
-mod day_1; // Trebuchet?!
-mod day_2; // Cube Conundrum
-mod day_3; // Gear Ratios
-mod day_4; // Scratchcards
-mod day_5; // If You Give A Seed A Fertilizer
-mod day_6; // Wait For It
-mod day_7; // Camel Cards
-mod day_8; // Haunted Wasteland
-mod day_9; // Mirage Maintenance
+mod day_01; // Trebuchet?!
+mod day_02; // Cube Conundrum
+mod day_03; // Gear Ratios
+mod day_04; // Scratchcards
+mod day_05; // If You Give A Seed A Fertilizer
+mod day_06; // Wait For It
+mod day_07; // Camel Cards
+mod day_08; // Haunted Wasteland
+mod day_09; // Mirage Maintenance
 
 mod day_10; // Pipe Maze
 mod day_11; // Cosmic Expansion
