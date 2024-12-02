@@ -52,6 +52,8 @@ fn part_1(input: &str, case: [&i32; 3]) -> i32 {
 
 #[cfg(test)]
 mod tests {
+    use common::util::read_input;
+
     use super::*;
     use crate::util::print_green;
 
@@ -72,7 +74,7 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 
     #[test]
     fn run_part_1() {
-        let input = include_str!("./input.txt");
+        let input = &read_input(file!());
 
         let result = part_1(input, [&12, &13, &14]);
         print_green(&format!("Day 2, part 1 result: {}", result));

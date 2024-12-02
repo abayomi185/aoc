@@ -109,6 +109,8 @@ fn part_2(input: &str) -> i64 {
 
 #[cfg(test)]
 mod tests {
+    use common::util::read_input;
+
     use super::*;
     use crate::util::print_green;
     use std::path::Path;
@@ -135,7 +137,7 @@ XXX = (XXX, XXX)
 
     #[test]
     fn run_part_2() {
-        let input = include_str!("./input.txt");
+        let input = &read_input(file!());
 
         let result = part_2(input);
 

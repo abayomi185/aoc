@@ -62,6 +62,8 @@ fn part_1(input: &str) -> i32 {
 
 #[cfg(test)]
 mod tests {
+    use common::util::read_input;
+
     use super::*;
     use crate::util::print_green;
     use std::path::Path;
@@ -99,7 +101,7 @@ ZZZ = (ZZZ, ZZZ)
 
     #[test]
     fn run_part_1() {
-        let input = include_str!("./input.txt");
+        let input = &read_input(file!());
 
         let result = part_1(input);
 

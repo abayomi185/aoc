@@ -70,6 +70,8 @@ fn part_2(input: &str) -> i64 {
 
 #[cfg(test)]
 mod tests {
+    use common::util::read_input;
+
     use super::*;
     use crate::util::print_green;
 
@@ -118,7 +120,7 @@ humidity-to-location map:
 
     #[test]
     fn run_part_2() {
-        let input = include_str!("./input.txt");
+        let input = &read_input(file!());
 
         let result = part_2(input);
         print_green(&format!("Day 5, part 2 result: {}", result));

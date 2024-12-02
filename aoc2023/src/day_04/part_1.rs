@@ -48,6 +48,8 @@ fn part_1(input: &str) -> i32 {
 
 #[cfg(test)]
 mod tests {
+    use common::util::read_input;
+
     use super::*;
     use crate::util::print_green;
 
@@ -69,7 +71,7 @@ Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
 
     #[test]
     fn run_part_1() {
-        let input = include_str!("./input.txt");
+        let input = &read_input(file!());
 
         let result = part_1(input);
         print_green(&format!("Day 4, part 1 result: {}", result));

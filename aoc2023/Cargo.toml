@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+common = { path = "../common" }
 indexmap = "2.1.0"
 rayon = "1.8.0"
 regex = "1.10.2"
