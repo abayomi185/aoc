@@ -1,15 +1,17 @@
 use std::{
     fs,
     ops::{Add, Sub},
+    path::Path,
 };
 
 pub fn print_green(message: &str) {
     println!("\x1b[32m{}\x1b[0m", message);
 }
 
-pub fn read_input() -> String {
-    let path = "./input.txt";
-    fs::read_to_string(path).unwrap_or_else(|_| panic!("Error reading input file: {}", path))
+pub fn read_input(file_path: &str) -> String {
+    let input_path = Path::new(file_path).parent().unwrap().join("input.txt");
+    fs::read_to_string(&input_path)
+        .unwrap_or_else(|_| panic!("Error reading input file: {}", &input_path.display()))
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
