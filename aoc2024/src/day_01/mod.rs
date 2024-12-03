@@ -82,7 +82,7 @@ mod tests {
     fn run_part_1() {
         let result = part_1(&read_input(file!()));
         print_green(&format!("Day 1, part 1 result: {result}"));
-        assert_eq!(result, 1189304)
+        assert_eq!(result, 2815556)
     }
 
     #[test]
@@ -105,6 +105,6 @@ mod tests {
     fn run_part_2() {
         let result = part_2(&read_input(file!()));
         print_green(&format!("Day 1, part 2 result: {result}"));
-        assert_eq!(result, 24349736)
+        assert_eq!(result, 23927637)
     }
 }
