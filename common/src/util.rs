@@ -2,6 +2,7 @@ use std::{
     fs,
     ops::{Add, Sub},
     path::Path,
+    process::Command,
 };
 
 pub fn print_green(message: &str) {
@@ -10,8 +11,23 @@ pub fn print_green(message: &str) {
 
 pub fn read_input(file_path: &str) -> String {
     let input_path = Path::new(file_path).parent().unwrap().join("input.txt");
-    fs::read_to_string(&input_path)
-        .unwrap_or_else(|_| panic!("Error reading input file: {}", &input_path.display()))
+    let cargo_output = Command::new("cargo")
+        .arg("metadata")
+        .arg("--no-deps")
+        .arg("--format-version")
+        .arg("1")
+        .output()
+        .expect("Failed to execute cargo metadata");
+    let metadata: serde_json::Value =
+        serde_json::from_slice(&cargo_output.stdout).expect("Failed to parse JSON");
+    let workspace_root = metadata
+        .get("workspace_root")
+        .and_then(serde_json::Value::as_str)
+        .expect("Workspace root not found in metadata");
+
+    let full_path = Path::new(workspace_root).join(input_path);
+    fs::read_to_string(&full_path)
+        .unwrap_or_else(|_| panic!("Error reading input file: {}", full_path.display()))
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
