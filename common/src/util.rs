@@ -2,7 +2,7 @@ use std::{
     fs,
     ops::{Add, Sub},
     path::Path,
-    process::Command,
+    process::{Command, Stdio},
 };
 
 pub fn print_green(message: &str) {
@@ -16,6 +16,7 @@ pub fn read_input(file_path: &str) -> String {
         .arg("--no-deps")
         .arg("--format-version")
         .arg("1")
+        .stdout(Stdio::piped())
         .output()
         .expect("Failed to execute cargo metadata");
     let metadata: serde_json::Value =
