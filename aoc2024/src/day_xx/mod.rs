@@ -14,13 +14,12 @@ mod tests {
 
     use super::*;
 
+    const INPUT: &str = r#"
+    "#;
+
     #[test]
     fn test_part_1() {
-        let input = r#"
-"#
-        .trim_start_matches('\n');
-
-        let result = part_1(input);
+        let result = part_1(INPUT.trim_start_matches('\n'));
         assert_eq!(result, 1);
     }
 
@@ -32,11 +31,7 @@ mod tests {
 
     #[test]
     fn test_part_2() {
-        let input = r#"
-"#
-        .trim_start_matches('\n');
-
-        let result = part_1(input);
+        let result = part_2(INPUT.trim_start_matches('\n'));
         assert_eq!(result, 1);
     }
 
