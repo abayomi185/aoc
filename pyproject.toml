@@ -6,8 +6,8 @@ requires-python = ">=3.12"
 dependencies = ["pytest>8"]
 
 [tool.setuptools.packages.find]
+include = ["common", "aoc2024", "aoc2025"]
 where = ["."]
-include = ["common", "aoc2024"]
 exclude = []
 
 [tool.pytest.ini_options]
